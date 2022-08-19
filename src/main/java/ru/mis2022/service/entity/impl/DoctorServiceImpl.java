@@ -31,6 +31,11 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
+    public Doctor merge(Doctor doctor) {
+        return doctorRepository.save(doctor);
+    }
+
+    @Override
     public List<Doctor> findByDepartment(Department department) {
         return doctorRepository.findByDepartment(department);
     }

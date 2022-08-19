@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,5 +36,10 @@ public class MedicalOrganization {
     private String address;
 
     @OneToMany(mappedBy = "medicalOrganization", fetch = FetchType.LAZY)
-    private Set<Department> departments;
+    private List<Department> departments;
+
+    public MedicalOrganization(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 }

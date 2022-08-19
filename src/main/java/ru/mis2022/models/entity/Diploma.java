@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Positive;
 import java.time.LocalDate;
 
 /**
@@ -40,4 +41,9 @@ public class Diploma {
     @JoinColumn(name = "personal_history_id")
     private PersonalHistory personalHistory;
 
+    public Diploma(String universityName, Long serialNumber, LocalDate dateFrom) {
+        this.universityName = universityName;
+        this.serialNumber = serialNumber;
+        this.dateFrom = dateFrom;
+    }
 }

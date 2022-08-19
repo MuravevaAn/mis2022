@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,9 +40,14 @@ public class MedicalService {
     private String name;
 
     @OneToMany(mappedBy = "medicalService", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<PriceOfMedicalService> prices;
+    private List<PriceOfMedicalService> prices;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "visit_id")
     private Visit visit;
+
+    public MedicalService(String identifier, String name) {
+        this.identifier = identifier;
+        this.name = name;
+    }
 }

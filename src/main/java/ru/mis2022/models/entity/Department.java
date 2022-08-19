@@ -46,10 +46,10 @@ public class Department {
     private Set<Doctor> doctors;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private Set<Disease> diseases;
+    private List<Disease> diseases;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    private Set<MedicalService> medicalServices;
+    private List<MedicalService> medicalServices;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medical_organization_id")

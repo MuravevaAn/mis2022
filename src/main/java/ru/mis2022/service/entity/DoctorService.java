@@ -11,6 +11,7 @@ public interface DoctorService {
     Doctor findByEmail(String email);
 
     Doctor persist(Doctor doctor);
+    Doctor merge(Doctor doctor);
 
     List<Doctor> findByDepartment(Department department);
 
