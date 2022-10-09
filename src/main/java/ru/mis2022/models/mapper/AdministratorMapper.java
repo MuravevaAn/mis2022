@@ -6,6 +6,8 @@ import ru.mis2022.models.dto.administrator.AdministratorDto;
 import ru.mis2022.models.entity.Administrator;
 import ru.mis2022.models.entity.Role;
 
+import java.util.ArrayList;
+
 @Mapper(componentModel = "spring")
 public interface AdministratorMapper {
 

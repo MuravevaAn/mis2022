@@ -4,6 +4,6 @@ services:
     build: .
     container_name: mis2022-db
     environment:
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: 1234
     ports:
       - "5455:5432"

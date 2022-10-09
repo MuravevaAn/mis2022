@@ -20,7 +20,10 @@ import ru.mis2022.service.entity.PatientService;
 import ru.mis2022.service.entity.TalonService;
 import ru.mis2022.utils.validation.ApiValidationUtils;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.TreeMap;
 
 
 @RestController
@@ -52,5 +55,7 @@ public class DoctorTalonsRestController {
         List<Talon> talons = talonService.persistTalonsForDoctorAndPatient(doctor, patient, numberOfDays, numbersOfTalons);
 
         return Response.ok(talonConverter.toTalonDtoByDoctorId(talons, doctor.getId()));
+
+
     }
 }
